@@ -1,6 +1,6 @@
 # 한국거래소 수급 해석론
 
-Concise Korean web deck for KRX supply-flow analysis methodology.
+Korean landing page for a KRX supply-flow analysis methodology.
 
 Run locally:
 
