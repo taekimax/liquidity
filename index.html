@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>한국거래소 수급 해석론</title>
+    <meta
+      name="description"
+      content="한국거래소 수급 데이터를 가격 변동 가설로 읽는 방법론 웹 슬라이드."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="mark" href="#slide-1" aria-label="첫 슬라이드로 이동">
+        <span class="mark__dot"></span>
+        수급 해석론
+      </a>
+      <nav class="topnav" aria-label="주요 슬라이드">
+        <a href="#slide-3">분류</a>
+        <a href="#slide-5">Delta</a>
+        <a href="#slide-7">흡수</a>
+        <a href="#slide-12">원칙</a>
+      </nav>
+      <div class="progress" aria-hidden="true"><span></span></div>
+    </header>
+
+    <nav class="mobile-controls" aria-label="슬라이드 이동">
+      <button type="button" data-prev aria-label="이전 슬라이드">이전</button>
+      <div class="mobile-dots" aria-label="슬라이드 바로가기">
+        <a href="#slide-1" aria-label="1번 슬라이드"></a>
+        <a href="#slide-2" aria-label="2번 슬라이드"></a>
+        <a href="#slide-3" aria-label="3번 슬라이드"></a>
+        <a href="#slide-4" aria-label="4번 슬라이드"></a>
+        <a href="#slide-5" aria-label="5번 슬라이드"></a>
+        <a href="#slide-6" aria-label="6번 슬라이드"></a>
+        <a href="#slide-7" aria-label="7번 슬라이드"></a>
+        <a href="#slide-8" aria-label="8번 슬라이드"></a>
+        <a href="#slide-9" aria-label="9번 슬라이드"></a>
+        <a href="#slide-10" aria-label="10번 슬라이드"></a>
+        <a href="#slide-11" aria-label="11번 슬라이드"></a>
+        <a href="#slide-12" aria-label="12번 슬라이드"></a>
+      </div>
+      <button type="button" data-next aria-label="다음 슬라이드">다음</button>
+    </nav>
+
+    <aside class="rail" aria-label="슬라이드 목록">
+      <a href="#slide-1" data-index="01"><span>가설</span></a>
+      <a href="#slide-2" data-index="02"><span>유동장</span></a>
+      <a href="#slide-3" data-index="03"><span>분류</span></a>
+      <a href="#slide-4" data-index="04"><span>기준선</span></a>
+      <a href="#slide-5" data-index="05"><span>Delta</span></a>
+      <a href="#slide-6" data-index="06"><span>비율</span></a>
+      <a href="#slide-7" data-index="07"><span>흡수</span></a>
+      <a href="#slide-8" data-index="08"><span>공급</span></a>
+      <a href="#slide-9" data-index="09"><span>점성</span></a>
+      <a href="#slide-10" data-index="10"><span>반응</span></a>
+      <a href="#slide-11" data-index="11"><span>사례</span></a>
+      <a href="#slide-12" data-index="12"><span>원칙</span></a>
+    </aside>
+
+    <main class="deck">
+      <section class="slide" id="slide-1" data-slide>
+        <p class="chapter">01 / 전제</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">가설</p>
+            <h1>수급 데이터는 결론이 아니다.</h1>
+            <p class="paragraph">
+              한국거래소 수급 데이터는 가격 변동 가설을 만들기 위한 관찰 자료다. 어느 주체가 샀다는
+              사실만으로 주가가 오를 것이라고 말할 수 없다. 중요한 것은 기존 균형 대비 수급 압력이
+              얼마나 달라졌고, 그 압력이 가격에 어떻게 전달되었는가다.
+            </p>
+            <p class="takeaway">수급 분석은 매수 신호가 아니라 검증 가능한 질문으로 시작한다.</p>
+          </div>
+          <figure class="graphic flowline" aria-label="수급에서 압력과 가격 가설로 이어지는 흐름">
+            <div>수급</div>
+            <span></span>
+            <div>압력</div>
+            <span></span>
+            <div class="accent">가설</div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-2" data-slide>
+        <p class="chapter">02 / 시장</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">유동장</p>
+            <h2>시장은 고정된 파이프가 아니다.</h2>
+            <p class="paragraph">
+              주식시장의 유동성은 가변적 유동장에 가깝다. 평상시에는 종목마다 평균 거래대금,
+              자주 참여하는 투자자군, 반복적으로 반응하는 가격대가 있다. 그러나 실적, 금리, 환율,
+              지수 수급, 공급 이벤트가 참여자의 행동을 바꾸면 이 균형은 흔들린다.
+            </p>
+            <p class="takeaway">분석의 목표는 흐름의 방식이 바뀌는 순간을 찾는 것이다.</p>
+          </div>
+          <figure class="graphic field" aria-label="평상시 흐름이 전이 상태로 바뀌는 모습">
+            <div class="field__stable"><span></span><span></span><span></span></div>
+            <div class="field__shock">전이</div>
+            <div class="field__changed"><span></span><span></span><span></span></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-3" data-slide>
+        <p class="chapter">03 / 한국거래소 분류</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">분류</p>
+            <h2>한국거래소는 투자자 주체별 수급을 나눈다.</h2>
+            <p class="paragraph">
+              기본 축은 개인, 외국인, 기관합계, 기타법인이다. 기관은 다시 금융투자, 보험, 투신,
+              사모, 은행, 기타금융, 연기금 등으로 나뉜다. 이 분류는 매우 유용하지만, 같은 분류 안에도
+              서로 다른 시간축과 목적을 가진 자금이 섞여 있다.
+            </p>
+            <p class="takeaway">분류는 의도가 아니라 관찰 가능한 흐름의 이름이다.</p>
+          </div>
+          <figure class="graphic classes" aria-label="한국거래소 투자자 분류">
+            <div class="classes__main">개인</div>
+            <div class="classes__main">외국인</div>
+            <div class="classes__main classes__main--wide">기관합계</div>
+            <div class="classes__sub">금융투자</div>
+            <div class="classes__sub">보험</div>
+            <div class="classes__sub">투신</div>
+            <div class="classes__sub">사모</div>
+            <div class="classes__sub">은행</div>
+            <div class="classes__sub">연기금</div>
+            <div class="classes__main">기타법인</div>
+            <div class="classes__main">기타외국</div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-4" data-slide>
+        <p class="chapter">04 / 기준선</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">평상시</p>
+            <h2>변화를 보려면 평상시를 먼저 정한다.</h2>
+            <p class="paragraph">
+              수급 Delta를 보려면 평상시 상태를 정의해야 한다. 기준선이 없으면 변화도 없다. 어떤
+              종목에서 1,000억원 순매수는 큰 사건일 수도 있고, 평소와 다르지 않은 일일 수도 있다.
+              평균 거래대금, 가격 위치, 투자자별 평균 순매수, 표준편차가 기준선이 된다.
+            </p>
+            <p class="takeaway">절대 금액보다 기준선 대비 변화가 먼저다.</p>
+          </div>
+          <figure class="graphic baseline" aria-label="평균 범위와 이례적 변화">
+            <div class="baseline__band"></div>
+            <div class="baseline__mean">평균</div>
+            <div class="baseline__point baseline__point--normal">평소</div>
+            <div class="baseline__point baseline__point--event">변화</div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-5" data-slide>
+        <p class="chapter">05 / 수급 Delta</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">Delta</p>
+            <h2>Delta는 평소와 달라진 압력이다.</h2>
+            <p class="paragraph">
+              수급 Delta는 단순한 순매수 금액이 아니다. 평소 시장이 익숙하게 처리하던 흐름과
+              비교했을 때 얼마나 달라졌는지를 뜻한다. 같은 순매수라도 대형주에서는 흡수될 수 있고,
+              거래가 얇은 종목에서는 가격 균형을 크게 흔들 수 있다.
+            </p>
+            <p class="takeaway">최근 수급이 과거 평균에서 얼마나 벗어났는지 본다.</p>
+          </div>
+          <figure class="graphic delta" aria-label="평소 압력과 현재 압력 비교">
+            <div class="delta__bar delta__bar--base"><span>평소</span></div>
+            <div class="delta__bar delta__bar--now"><span>현재</span></div>
+            <p>차이 = Delta</p>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-6" data-slide>
+        <p class="chapter">06 / 상대 크기</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">비율</p>
+            <h2>압력은 거래대금과 함께 봐야 한다.</h2>
+            <p class="paragraph">
+              수급 압력이 실제 거래에서 얼마나 큰 비중을 차지했는지도 봐야 한다. 같은 1,000억원
+              순매수라도 거래대금 10조원 종목과 3,000억원 종목에서 의미는 다르다. 순매수 금액을
+              거래대금으로 나누면 압력의 상대적 크기를 볼 수 있다.
+            </p>
+            <p class="takeaway">압력 비율 = 투자자 순매수 / 당일 거래대금.</p>
+          </div>
+          <figure class="graphic ratio" aria-label="순매수와 거래대금의 비율">
+            <div class="ratio__top">투자자 순매수</div>
+            <div class="ratio__line"></div>
+            <div class="ratio__bottom">당일 거래대금</div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-7" data-slide>
+        <p class="chapter">07 / 흡수와 투과도</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">흡수</p>
+            <h2>압력은 그대로 가격이 되지 않는다.</h2>
+            <p class="paragraph">
+              수급 Delta가 발생해도 가격이 반드시 움직이는 것은 아니다. 새로운 주문 흐름을 가격
+              충격 없이 흡수할 수 있는 능력을 투과도라고 부를 수 있다. 강한 매수에도 가격이 오르지
+              못하면 공급 경로가 열렸을 수 있고, 강한 매도에도 가격이 버티면 흡수 수요가 있을 수 있다.
+            </p>
+            <p class="takeaway">핵심 질문은 “수급을 시장이 어떻게 처리했는가”다.</p>
+          </div>
+          <figure class="graphic absorption" aria-label="강한 매도와 가격 유지가 흡수로 이어지는 모습">
+            <div class="absorption__sell">강한 매도</div>
+            <span></span>
+            <div class="absorption__hold">가격 유지</div>
+            <span></span>
+            <div class="absorption__result">흡수</div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-8" data-slide>
+        <p class="chapter">08 / 공급 압력</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">공급</p>
+            <h2>수급 분석은 수요만 보는 일이 아니다.</h2>
+            <p class="paragraph">
+              가격이 오를 때마다 잠겨 있던 물량이 시장에 나올 수 있다. 기관 리밸런싱, 펀드 환매,
+              대주주 매도, 전환증권, 보호예수 해제, 차익 실현은 모두 공급 경로를 열 수 있다.
+              강한 매수에도 가격이 무겁다면 시장은 새 공급을 처리하는 중일 수 있다.
+            </p>
+            <p class="takeaway">좋아 보이는 순매수도 공급 앞에서는 무거워질 수 있다.</p>
+          </div>
+          <figure class="graphic supply" aria-label="수요와 공급의 균형">
+            <div class="supply__demand">수요</div>
+            <div class="supply__scale"></div>
+            <div class="supply__offer">공급</div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-9" data-slide>
+        <p class="chapter">09 / 지속성</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">점성</p>
+            <h2>흐름이 반복될 이유가 있어야 한다.</h2>
+            <p class="paragraph">
+              점성은 수급 압력이 쉽게 흩어지지 않고 가격 방향성을 유지하는 성질을 뜻하는 비유다.
+              중요한 것은 같은 투자자 분류가 아니라, 서로 다른 참여자들이 같은 방향의 가격 해석을
+              반복할 가능성이다. 강한 산업 내러티브는 서로 다른 자금을 한 방향으로 묶을 수 있다.
+            </p>
+            <p class="takeaway">분류보다 반복될 이유가 더 중요할 때가 많다.</p>
+          </div>
+          <figure class="graphic viscosity" aria-label="내러티브가 참여자를 한 방향으로 묶는 모습">
+            <div class="viscosity__center">내러티브</div>
+            <span>외국인</span>
+            <span>기관</span>
+            <span>개인</span>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-10" data-slide>
+        <p class="chapter">10 / 검증</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">반응</p>
+            <h2>가격 반응은 가설의 검증 장치다.</h2>
+            <p class="paragraph">
+              수급 데이터는 단서다. 가격 반응은 그 단서가 의미 있는지 확인하는 검증 장치다. 강한
+              순매수에도 가격이 오르지 못하면 공급이 더 크거나 기대가 이미 반영됐을 수 있다. 작은
+              순매수에도 가격이 크게 오르면 매도 가능 물량이 줄었을 수 있다.
+            </p>
+            <p class="takeaway">수급 해석은 항상 가격 반응으로 확인해야 한다.</p>
+          </div>
+          <figure class="graphic response" aria-label="수급과 가격 반응의 네 가지 해석">
+            <div>매수 + 상승<br /><strong>가속</strong></div>
+            <div>매수 + 정체<br /><strong>공급</strong></div>
+            <div>매도 + 유지<br /><strong>흡수</strong></div>
+            <div>매도 + 하락<br /><strong>위험</strong></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-11" data-slide>
+        <p class="chapter">11 / 사례</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">사례</p>
+            <h2>외국인은 팔았지만 가격은 올랐다.</h2>
+            <p class="paragraph">
+              삼성전자와 SK하이닉스의 최근 1년 사례는 누적 수급만으로 가격을 설명할 수 없음을
+              보여준다. 두 종목 모두 외국인은 누적 기준 대규모 순매도였지만 가격은 크게 올랐다.
+              이 사례의 핵심은 매도 물량이 시장에서 흡수되었는지, 흡수 이후 가격이 어떻게 반응했는지다.
+            </p>
+            <p class="source-note">자료: 한국거래소, 2025-06-30~2026-06-29</p>
+          </div>
+          <figure class="graphic casebars" aria-label="가격 상승과 외국인 누적 순매도">
+            <div class="casebars__row">
+              <span>삼성전자</span>
+              <div class="casebars__up">+440%</div>
+              <div class="casebars__down">-58.6조</div>
+            </div>
+            <div class="casebars__row">
+              <span>SK하이닉스</span>
+              <div class="casebars__up casebars__up--wide">+800%</div>
+              <div class="casebars__down casebars__down--wide">-65.5조</div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-12" data-slide>
+        <p class="chapter">12 / 실행 원칙</p>
+        <div class="slide__body">
+          <div class="copy">
+            <p class="keyword">원칙</p>
+            <h2>좋은 수급 분석은 가능성과 한계를 함께 말한다.</h2>
+            <p class="paragraph">
+              수급 분석은 모든 가격 변동을 예측하지 못한다. 관찰 가능한 변수로 다음 가격 변동
+              가능성을 근사하는 작업이다. 평균 상태가 깨지는 일부 구간에서만 유용하며, 모든 신호는
+              가격 확인과 손절 기준을 함께 가져야 한다.
+            </p>
+            <p class="takeaway">수급은 가능성을 좁히는 도구다. 정답이 아니다.</p>
+          </div>
+          <figure class="graphic checklist" aria-label="수급 분석 실행 순서">
+            <div>기준선</div>
+            <div>Delta</div>
+            <div>압력 비율</div>
+            <div>가격 반응</div>
+            <div>가설 작성</div>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>자료: 한국거래소</span>
+      <span>수급은 결론이 아니라 가격 변동 가설의 재료다.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
