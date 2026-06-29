@@ -69,9 +69,12 @@
             <p class="paragraph">
               한국거래소 수급 데이터는 가격 변동 가설을 만들기 위한 관찰 자료다. 어느 주체가 샀다는
               사실만으로 주가가 오를 것이라고 말할 수 없다. 중요한 것은 기존 균형 대비 수급 압력이
-              얼마나 달라졌고, 그 압력이 가격에 어떻게 전달되었는가다.
+              얼마나 달라졌고, 그 압력이 시장의 흡수 능력과 만나 가격에 어떻게 전달되었는가다.
             </p>
-            <p class="takeaway">수급 분석은 매수 신호가 아니라 검증 가능한 질문으로 시작한다.</p>
+            <p class="takeaway">
+              그래서 수급 분석의 첫 문장은 “누가 샀다”가 아니라 “평소와 다른 압력이 생겼고,
+              가격이 그것을 확인하는가”가 되어야 한다.
+            </p>
           </div>
           <figure class="graphic flowline" aria-label="수급에서 압력과 가격 가설로 이어지는 흐름">
             <div>수급</div>
@@ -92,9 +95,13 @@
             <p class="paragraph">
               주식시장의 유동성은 가변적 유동장에 가깝다. 평상시에는 종목마다 평균 거래대금,
               자주 참여하는 투자자군, 반복적으로 반응하는 가격대가 있다. 그러나 실적, 금리, 환율,
-              지수 수급, 공급 이벤트가 참여자의 행동을 바꾸면 이 균형은 흔들린다.
+              지수 수급, ETF 자금, 보호예수 해제, 대주주 매도 같은 공급 이벤트가 참여자의 행동을
+              바꾸면 이 균형은 흔들린다.
             </p>
-            <p class="takeaway">분석의 목표는 흐름의 방식이 바뀌는 순간을 찾는 것이다.</p>
+            <p class="takeaway">
+              같은 거래대금 안에도 장기 매수, 단기 추격, 손절, 리밸런싱, 공급 물량이 섞여 있으므로
+              유동성이 많고 적은지만 보지 말고 흐름의 방식이 바뀌는지 봐야 한다.
+            </p>
           </div>
           <figure class="graphic field" aria-label="평상시 흐름이 전이 상태로 바뀌는 모습">
             <div class="field__stable"><span></span><span></span><span></span></div>
@@ -111,24 +118,27 @@
             <p class="keyword">분류</p>
             <h2>한국거래소는 투자자 주체별 수급을 나눈다.</h2>
             <p class="paragraph">
-              기본 축은 개인, 외국인, 기관합계, 기타법인이다. 기관은 다시 금융투자, 보험, 투신,
-              사모, 은행, 기타금융, 연기금 등으로 나뉜다. 이 분류는 매우 유용하지만, 같은 분류 안에도
-              서로 다른 시간축과 목적을 가진 자금이 섞여 있다.
+              일반 투자자가 읽기 쉽게 바꾸면, 개인은 개인 계좌의 매매이고 외국인계는 해외 투자자
+              자금이다. 기관합계는 증권사·선물사, 보험사, 자산운용사, 사모펀드, 은행, 연기금 같은
+              전문 투자자 자금을 묶은 값이다. 기타법인은 일반 사업회사나 특수법인처럼 위 분류에
+              들어가지 않는 법인 매매로 보면 된다.
             </p>
-            <p class="takeaway">분류는 의도가 아니라 관찰 가능한 흐름의 이름이다.</p>
+            <p class="takeaway">
+              외국인과 기타외국인은 같은 외국인계로 묶어 읽되, 외국인은 투자등록 ID가 있는 외국인,
+              기타외국인은 투자등록 ID가 없는 외국인으로 구분된다는 점을 기억하면 된다.
+            </p>
           </div>
           <figure class="graphic classes" aria-label="한국거래소 투자자 분류">
-            <div class="classes__main">개인</div>
-            <div class="classes__main">외국인</div>
+            <div class="classes__main">개인<br /><small>개인 투자자</small></div>
+            <div class="classes__main classes__main--foreign">외국인계<br /><small>외국인 + 기타외국인</small></div>
             <div class="classes__main classes__main--wide">기관합계</div>
-            <div class="classes__sub">금융투자</div>
-            <div class="classes__sub">보험</div>
-            <div class="classes__sub">투신</div>
-            <div class="classes__sub">사모</div>
+            <div class="classes__sub">증권사·선물사</div>
+            <div class="classes__sub">보험사</div>
+            <div class="classes__sub">자산운용사</div>
+            <div class="classes__sub">사모펀드</div>
             <div class="classes__sub">은행</div>
-            <div class="classes__sub">연기금</div>
-            <div class="classes__main">기타법인</div>
-            <div class="classes__main">기타외국</div>
+            <div class="classes__sub">연기금·공제회</div>
+            <div class="classes__main">기타법인<br /><small>일반 회사 등</small></div>
           </figure>
         </div>
       </section>
@@ -144,7 +154,10 @@
               종목에서 1,000억원 순매수는 큰 사건일 수도 있고, 평소와 다르지 않은 일일 수도 있다.
               평균 거래대금, 가격 위치, 투자자별 평균 순매수, 표준편차가 기준선이 된다.
             </p>
-            <p class="takeaway">절대 금액보다 기준선 대비 변화가 먼저다.</p>
+            <p class="takeaway">
+              대형주는 큰 순매수도 쉽게 흡수할 수 있고, 거래가 얇은 종목은 작은 순매수에도 크게
+              흔들릴 수 있으므로 절대 금액보다 종목별 기준선 대비 변화를 먼저 봐야 한다.
+            </p>
           </div>
           <figure class="graphic baseline" aria-label="평균 범위와 이례적 변화">
             <div class="baseline__band"></div>
@@ -166,7 +179,10 @@
               비교했을 때 얼마나 달라졌는지를 뜻한다. 같은 순매수라도 대형주에서는 흡수될 수 있고,
               거래가 얇은 종목에서는 가격 균형을 크게 흔들 수 있다.
             </p>
-            <p class="takeaway">최근 수급이 과거 평균에서 얼마나 벗어났는지 본다.</p>
+            <p class="takeaway">
+              실전에서는 최근 며칠의 투자자별 순매수가 과거 평균과 표준편차에서 얼마나 벗어났는지
+              확인해 “새로운 압력”인지 “평소 흐름”인지 구분한다.
+            </p>
           </div>
           <figure class="graphic delta" aria-label="평소 압력과 현재 압력 비교">
             <div class="delta__bar delta__bar--base"><span>평소</span></div>
@@ -187,7 +203,11 @@
               순매수라도 거래대금 10조원 종목과 3,000억원 종목에서 의미는 다르다. 순매수 금액을
               거래대금으로 나누면 압력의 상대적 크기를 볼 수 있다.
             </p>
-            <p class="takeaway">압력 비율 = 투자자 순매수 / 당일 거래대금.</p>
+            <p class="takeaway">
+              압력 비율은 투자자 순매수를 당일 거래대금으로 나눈 값이다. 이 비율이 커질수록 수급이
+              가격에 영향을 줄 가능성은 커지지만, 그 자체가 결론은 아니며 다음 단계에서 가격 반응을
+              확인해야 한다.
+            </p>
           </div>
           <figure class="graphic ratio" aria-label="순매수와 거래대금의 비율">
             <div class="ratio__top">투자자 순매수</div>
@@ -208,7 +228,10 @@
               충격 없이 흡수할 수 있는 능력을 투과도라고 부를 수 있다. 강한 매수에도 가격이 오르지
               못하면 공급 경로가 열렸을 수 있고, 강한 매도에도 가격이 버티면 흡수 수요가 있을 수 있다.
             </p>
-            <p class="takeaway">핵심 질문은 “수급을 시장이 어떻게 처리했는가”다.</p>
+            <p class="takeaway">
+              수급이 얼마나 들어왔는지보다 시장이 그 수급을 어떻게 처리했는지가 더 중요하다. 큰
+              매도를 버티는 종목은 흡수 후보이고, 큰 매수에도 못 오르는 종목은 공급 개방 후보가 된다.
+            </p>
           </div>
           <figure class="graphic absorption" aria-label="강한 매도와 가격 유지가 흡수로 이어지는 모습">
             <div class="absorption__sell">강한 매도</div>
@@ -231,7 +254,10 @@
               대주주 매도, 전환증권, 보호예수 해제, 차익 실현은 모두 공급 경로를 열 수 있다.
               강한 매수에도 가격이 무겁다면 시장은 새 공급을 처리하는 중일 수 있다.
             </p>
-            <p class="takeaway">좋아 보이는 순매수도 공급 앞에서는 무거워질 수 있다.</p>
+            <p class="takeaway">
+              표면적으로는 순매수가 좋아 보여도 종가가 오르지 못하고 거래대금만 커진다면, 신규
+              수요가 가격을 밀어 올리는 것이 아니라 새로 열린 매물을 받아내는 중일 수 있다.
+            </p>
           </div>
           <figure class="graphic supply" aria-label="수요와 공급의 균형">
             <div class="supply__demand">수요</div>
@@ -252,7 +278,10 @@
               중요한 것은 같은 투자자 분류가 아니라, 서로 다른 참여자들이 같은 방향의 가격 해석을
               반복할 가능성이다. 강한 산업 내러티브는 서로 다른 자금을 한 방향으로 묶을 수 있다.
             </p>
-            <p class="takeaway">분류보다 반복될 이유가 더 중요할 때가 많다.</p>
+            <p class="takeaway">
+              외국인 전체나 기관 전체를 하나의 의지로 보면 안 된다. 더 중요한 것은 서로 다른 자금이
+              다른 이유로 들어오더라도 결과적으로 같은 방향의 가격 재평가를 반복할 수 있는가다.
+            </p>
           </div>
           <figure class="graphic viscosity" aria-label="내러티브가 참여자를 한 방향으로 묶는 모습">
             <div class="viscosity__center">내러티브</div>
@@ -274,7 +303,10 @@
               순매수에도 가격이 오르지 못하면 공급이 더 크거나 기대가 이미 반영됐을 수 있다. 작은
               순매수에도 가격이 크게 오르면 매도 가능 물량이 줄었을 수 있다.
             </p>
-            <p class="takeaway">수급 해석은 항상 가격 반응으로 확인해야 한다.</p>
+            <p class="takeaway">
+              분석은 “이 수급이 가격을 움직였는가”, “움직이지 않았다면 무엇이 흡수했는가”,
+              “과도하게 움직였다면 이미 반영된 것은 아닌가”를 확인하는 데서 끝나야 한다.
+            </p>
           </div>
           <figure class="graphic response" aria-label="수급과 가격 반응의 네 가지 해석">
             <div>매수 + 상승<br /><strong>가속</strong></div>
@@ -295,6 +327,10 @@
               삼성전자와 SK하이닉스의 최근 1년 사례는 누적 수급만으로 가격을 설명할 수 없음을
               보여준다. 두 종목 모두 외국인은 누적 기준 대규모 순매도였지만 가격은 크게 올랐다.
               이 사례의 핵심은 매도 물량이 시장에서 흡수되었는지, 흡수 이후 가격이 어떻게 반응했는지다.
+            </p>
+            <p class="takeaway">
+              외국인이 팔았다는 사실만으로 약세를 단정할 수 없다. 강한 내러티브와 충분한 반대편
+              수요가 있으면 대량 매도는 가격 붕괴가 아니라 흡수 테스트로 끝날 수 있다.
             </p>
             <p class="source-note">자료: 한국거래소, 2025-06-30~2026-06-29</p>
           </div>
@@ -324,7 +360,10 @@
               가능성을 근사하는 작업이다. 평균 상태가 깨지는 일부 구간에서만 유용하며, 모든 신호는
               가격 확인과 손절 기준을 함께 가져야 한다.
             </p>
-            <p class="takeaway">수급은 가능성을 좁히는 도구다. 정답이 아니다.</p>
+            <p class="takeaway">
+              좋은 수급 분석은 “새 압력이 생겼고, 거래대금 대비 충분히 크며, 가격 반응이 이를 일부
+              확인한다”처럼 말한다. 반대로 가격 반응이 약하면 신호가 아니라 관찰 대상으로 남긴다.
+            </p>
           </div>
           <figure class="graphic checklist" aria-label="수급 분석 실행 순서">
             <div>기준선</div>
