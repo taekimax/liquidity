@@ -17,9 +17,10 @@
         수급 해석론
       </a>
       <nav class="topnav" aria-label="주요 내용">
-        <a href="#classification">분류</a>
+        <a href="#purpose">개요</a>
+        <a href="#field">유동장</a>
+        <a href="#dynamics">구조</a>
         <a href="#delta">Delta</a>
-        <a href="#permeability">투과도</a>
         <a href="#practice">절차</a>
       </nav>
       <div class="progress" aria-hidden="true"><span></span></div>
@@ -29,43 +30,42 @@
       <section class="hero" id="top" data-section>
         <div class="hero__content">
           <p class="eyebrow">한국거래소 수급 해석론</p>
-          <h1>가변적 유동장으로 보는 주가 변동 가능성</h1>
+          <h1>가변적 유동장으로 보는 주가 변동 예측</h1>
           <p class="lead">
-            이 방법론은 한국거래소가 제공하는 주체별 수급 데이터의 세분성에 기초한다. 공개된
-            참여자별 거래 흐름을 이용해 기존 균형 대비 수급 Delta, 반복 가능성, 가격 반응을
-            추정하는 한국 주식시장 특유의 분석 틀이다.
+            이 방법론의 목적은 한국 주식시장에서 주가 변동 가능성을 예측하는 것이다. 예측은 특정 시점의 목표가를 맞히는 일이 아니다.
+            현재 가격 균형이 어느 방향으로 움직일 가능성이 커졌는지, 변동성이 커질 조건이 형성되고 있는지, 그 움직임이 지속될 수 있는지를 판단하는
+            일이다.
           </p>
           <p class="summary">
-            수급 분석의 실천적 목적은 주가 변동 가능성을 예측하는 것이다. 현재 가격 균형이 어느
-            방향으로 흔들릴 가능성이 커졌는지, 변동성이 커질 조건이 형성되고 있는지, 그 움직임이
-            반복될 수 있는지를 판단한다.
+            한국거래소가 제공하는 주체별 상세 수급 데이터를 바탕으로 기존 균형 대비 수급 Delta,
+            수급의 반복 가능성, 가격 반응을 추정한다. 수급은 매수·매도 신호가 아니라 실행 가능한 가격 변동 가설로 정리되어야 한다.
           </p>
           <div class="hero__actions" aria-label="바로가기">
-            <a href="#classification">분류 먼저 보기</a>
-            <a href="#practice">실전 절차 보기</a>
+            <a href="#field">유동장 이론 보기</a>
+            <a href="#dynamics">전이 구조 보기</a>
           </div>
         </div>
 
         <div class="method-map" aria-label="수급 분석의 기본 흐름">
           <div>
             <span>01</span>
-            <strong>평상시 유동장</strong>
-            <p>거래대금, 회전율, 가격 위치, 보유자 성향을 기준선으로 둔다.</p>
+            <strong>데이터 전제</strong>
+            <p>주체별 상세 수급 데이터로 공개된 참여자별 거래 흐름을 관찰한다.</p>
           </div>
           <div>
             <span>02</span>
-            <strong>수급 Delta</strong>
-            <p>기존 균형 대비 새롭게 발생한 압력의 변화를 찾는다.</p>
+            <strong>동질성</strong>
+            <p>같은 정보, 시간축, 운용 규칙을 공유하는 반복 압력을 찾는다.</p>
           </div>
           <div>
             <span>03</span>
-            <strong>투과도</strong>
-            <p>새 주문 흐름이 가격 충격 없이 흡수되는 정도를 본다.</p>
+            <strong>Delta·투과도·점성</strong>
+            <p>압력 변화, 흡수 능력, 지속성을 함께 해석한다.</p>
           </div>
           <div>
             <span>04</span>
-            <strong>가격 반응</strong>
-            <p>가격이 수급 변화에 민감하게 반응하는지 확인한다.</p>
+            <strong>전이와 한계</strong>
+            <p>구조가 유지되는 구간과 붕괴되는 구간을 구분한다.</p>
           </div>
         </div>
       </section>
@@ -73,29 +73,40 @@
       <section class="section" id="purpose" data-section>
         <div class="section__head">
           <p class="eyebrow">01 / 전제와 목적</p>
-          <h2>수급 데이터는 가격 변동 가설을 세우는 출발점이다.</h2>
+          <h2>주체별 수급 데이터는 실전적 수급 분석의 출발점이다.</h2>
         </div>
         <div class="section__body">
           <p>
-            한국 시장은 일별·종목별로 개인, 외국인, 기관 및 기관 하위 주체의 매수·매도 흐름을
-            비교적 체계적으로 관찰할 수 있다. 이 세분성은 실전 수급 분석에 유리하다.
+            한국 시장에서는 일별·종목별로 개인, 외국인, 기관, 기타법인, 기타외국인 등 주요
+            투자자군의 매수·매도 흐름을 확인할 수 있다. 기관 수급은 다시 금융투자, 보험, 투신,
+            사모, 은행, 기타금융, 연기금 등 세부 주체로 나뉜다.
           </p>
           <p>
-            첫 확인 대상은 기존 균형 대비 수급 압력이 얼마나 달라졌는가다. 어떤 주체가 거래했는지,
-            그 압력이 시장의 흡수 능력과 만나 가격에 어떻게 전달되었는가를 함께 본다.
+            한국거래소의 투자자 분류는 거래가 발생한 계좌군을 보여주는 관찰 단위다. 이 분류만으로
+            투자자의 의도, 보유 기간, 투자 논리를 확정할 수는 없다. 그러나 공개된 참여자별 거래
+            흐름을 이용하면 기존 균형 대비 수급 Delta, 수급의 반복 가능성, 가격 반응을 추정할 수
+            있다.
           </p>
-          <div class="concept-strip" aria-label="핵심 개념 세 가지">
+          <div class="concept-strip" aria-label="핵심 개념 다섯 가지">
             <article>
-              <strong>Delta</strong>
-              <span>평소 흐름 대비 새롭게 발생한 수요와 공급 압력의 변화</span>
+              <strong>동질적 수급 주체</strong>
+              <span>같은 정보, 시간축, 투자 사상, 운용 규칙을 공유하며 유사한 행동을 반복할 가능성이 있는 참여자군</span>
+            </article>
+            <article>
+              <strong>수급 Delta</strong>
+              <span>기존 시장이 익숙하게 처리하던 매수·매도 흐름 대비 새롭게 발생한 압력의 변화</span>
             </article>
             <article>
               <strong>투과도</strong>
-              <span>새로운 주문 흐름을 가격 충격 없이 흡수하는 능력</span>
+              <span>특정 종목이 새로운 주문 흐름을 가격 충격 없이 흡수할 수 있는 능력</span>
             </article>
             <article>
               <strong>점성</strong>
-              <span>수급 압력이 쉽게 흩어지지 않고 방향성을 유지하는 성질</span>
+              <span>수급 압력이 가격으로 얼마나 강하게 전달되고, 얼마나 오래 유지될 수 있는지</span>
+            </article>
+            <article>
+              <strong>전이</strong>
+              <span>참여자 구성, 보유자 행동, 매도 가능 물량, 회전율, 가격대별 매물 구조가 동시에 재배열되는 상태</span>
             </article>
           </div>
         </div>
@@ -214,40 +225,106 @@
       <section class="section" id="field" data-section>
         <div class="section__head">
           <p class="eyebrow">03 / 가변적 유동장</p>
-          <h2>시장의 유동성은 새로운 이벤트에 반응해 계속 재구성된다.</h2>
+          <h2>주식시장의 유동성은 가변적 유동장으로 볼 수 있다.</h2>
         </div>
         <div class="section__body split">
           <div>
             <p>
-              이 노트는 주식시장의 유동성을 가변적 유동장으로 본다. 이는 유체역학의 비정상 유동과
-              투과도 변화 개념에서 착안한 비유다. 여러 투자자군, 보유자 성향, 거래대금, 회전율,
-              가격대가 결합해 특정 시점의 흐름을 만들고, 그 흐름은 새로운 이벤트에 반응해 계속
-              재구성된다.
+              이 방법론은 주식시장의 유동성을 가변적 유동장으로 본다. 이는 유체역학의 비정상 유동과
+              투과도 변화 개념에서 착안한 비유다. 주식시장의 유동성은 여러 투자자군, 보유자 성향,
+              거래대금, 회전율, 가격대가 결합해 특정 시점의 흐름을 만들고, 그 흐름은 새로운 이벤트에
+              반응해 계속 재구성된다.
             </p>
             <p>
-              평상시에는 비교적 안정된 흐름이 존재한다. 특정 종목에는 반복적으로 참여하는 투자자군,
-              평균적인 거래대금, 익숙한 회전율, 자주 반응하는 가격대가 있다. 이 상태에서는 시장이
-              어느 정도 예측 가능한 균형을 이룬다.
+              가변적 유동장은 탄성을 가진 반유체적 구조다. 특정 종목의 유동장은 통상적 범위 안에서는
+              구조적 동일성을 유지한 채로 유동장 내부 유체의 흐름 속도, 즉 수급의 가격 민감도만
+              달라진다. 이 구간에서는 수급과 가격 반응 사이의 관계가 비교적 안정적이다.
             </p>
           </div>
           <div class="explain-box">
             <strong>가변적 유동장</strong>
             <p>
-              유동성의 양에 더해 누가 참여하고, 어떤 물량이 잠기거나 풀리고, 어느 가격대에서 수요와
-              공급이 다시 만나는지 보는 관점이다.
+              유동성의 양만 보는 것이 아니라 누가 참여하고, 어떤 물량이 잠기거나 풀리고, 어느 가격대의
+              매물이 흡수되며, 수급 압력이 가격으로 얼마나 민감하게 전달되는지를 함께 보는 관점이다.
             </p>
           </div>
         </div>
         <div class="plain-list">
-          <p>기업 실적, 산업 내러티브, 제도 변화, 지수·ETF 수급, 공매도 환매는 참여자의 행동을 바꿀 수 있다.</p>
-          <p>보호예수 해제, 전환증권, 대주주 매도, 신규 발행, 글로벌 자금 이동은 공급 경로를 바꿀 수 있다.</p>
-          <p>주가가 크게 움직이는 순간은 정상적인 유동 상태가 변경될 때 자주 나타난다.</p>
+          <p>수요 또는 공급의 순증가가 통상적 범위 안에 있으면 주가의 수급 민감도만 달라진다.</p>
+          <p>기존 보유자가 매도를 미루고 매도 가능 물량이 줄어들면, 같은 규모의 추가 매수에도 가격은 더 민감하게 움직인다.</p>
+          <p>리밸런싱 압력이 평상시 유동장의 흡수 능력을 초과하면 유동장 구조가 일시적으로 붕괴하고 재구성될 수 있다.</p>
+        </div>
+      </section>
+
+      <section class="section section--wide section--visual" id="dynamics" data-section>
+        <div class="section__head">
+          <p class="eyebrow">04 / 유동장 구조와 전이</p>
+          <h2>구조가 유지될 때는 예측력이 높고, 전이 이후에는 반응이 불규칙해진다.</h2>
+          <p>
+            수급 분석의 예측력은 유동장 구조가 유지되는 동안 가장 높다. 수요 또는 공급 압력이 전이
+            한계를 넘으면 구조적 동일성이 약해지고, 수급-주가 민감도 관계가 무너진다. 이 순간부터
+            수급 분석은 방향 예측보다 전이 위험을 식별하는 도구로 사용해야 한다.
+          </p>
+        </div>
+
+        <div class="field-animation" data-stage="normal" aria-label="유동장 구조 전이 애니메이션">
+          <div class="field-animation__controls" aria-label="유동장 단계 선택">
+            <button type="button" class="is-active" data-field-stage="normal">통상적 유동장</button>
+            <button type="button" data-field-stage="delta">수급 Delta</button>
+            <button type="button" data-field-stage="sensitivity">민감도 상승</button>
+            <button type="button" data-field-stage="transition">전이 후 구조</button>
+          </div>
+
+          <div class="field-animation__stage" aria-hidden="true">
+            <div class="field-channel">
+              <span class="flow-line flow-line--top"></span>
+              <span class="flow-line flow-line--middle"></span>
+              <span class="flow-line flow-line--bottom"></span>
+              <span class="pressure pressure--buy">신규 수요</span>
+              <span class="pressure pressure--supply">잠재 공급</span>
+              <span class="market-node market-node--a">기관</span>
+              <span class="market-node market-node--b">외국인</span>
+              <span class="market-node market-node--c">기존 보유자</span>
+              <span class="price-path"></span>
+              <span class="transition-break"></span>
+            </div>
+          </div>
+
+          <div class="field-animation__copy" aria-live="polite">
+            <p class="field-animation__label">통상적 유동장</p>
+            <h3>반복 참여자, 평균 거래대금, 회전율, 가격대별 매물 구조가 비교적 안정된 상태다.</h3>
+            <p>
+              이 구간에서는 수급과 가격 반응 사이의 관계가 비교적 안정적이다. 신규 수급의 유입은
+              유동장 내 흐름 속도, 즉 수급의 주가에 대한 영향력을 증가시킨다.
+            </p>
+          </div>
+        </div>
+
+        <div class="structure-grid" aria-label="통상적 유동장과 전이 후 구조 비교">
+          <article>
+            <span>통상적 유동장 구조</span>
+            <h3>구조적 동일성이 유지된다.</h3>
+            <p>
+              반복적으로 참여하는 투자자군, 평균 거래대금, 회전율, 보유자 성향, 가격대별 매물 구조가
+              비교적 안정된 흐름을 만든다. 이때 수요 또는 공급의 변화는 가격 민감도의 변화로
+              관찰된다.
+            </p>
+          </article>
+          <article>
+            <span>유동장 전이 후의 구조</span>
+            <h3>같은 수급 압력에 대한 가격 반응이 불규칙해진다.</h3>
+            <p>
+              가격 상승이 잠겨 있던 공급을 불러내고, 단기 매매자의 회전율을 높이며, 기존 보유자의
+              매도 판단을 바꿀 수 있다. 강한 매수 압력도 새로 열린 공급을 소화하는 데 사용될 수
+              있다.
+            </p>
+          </article>
         </div>
       </section>
 
       <section class="section" id="delta" data-section>
         <div class="section__head">
-          <p class="eyebrow">04 / 수급 Delta</p>
+          <p class="eyebrow">05 / 수급 Delta</p>
           <h2>가격은 기존 균형 대비 달라진 압력에 민감하게 반응한다.</h2>
         </div>
         <div class="section__body split">
@@ -280,7 +357,7 @@
 
       <section class="section" id="permeability" data-section>
         <div class="section__head">
-          <p class="eyebrow">05 / 투과도</p>
+          <p class="eyebrow">06 / 투과도</p>
           <h2>수급 Delta는 시장의 흡수 능력과 함께 해석한다.</h2>
         </div>
         <div class="section__body split">
@@ -315,7 +392,7 @@
 
       <section class="section" id="viscosity" data-section>
         <div class="section__head">
-          <p class="eyebrow">06 / 점성과 동질성</p>
+          <p class="eyebrow">07 / 점성과 동질성</p>
           <h2>반복될 수 있는 압력은 가격 방향성을 오래 유지한다.</h2>
         </div>
         <div class="section__body">
@@ -339,8 +416,8 @@
 
       <section class="section" id="supply" data-section>
         <div class="section__head">
-          <p class="eyebrow">07 / 공급 압력과 전이</p>
-          <h2>매물이 열리고 닫히는 순간에 가격 민감도가 달라진다.</h2>
+          <p class="eyebrow">08 / 공급 압력과 전이</p>
+          <h2>전이는 단순한 가격 변동 확대가 아니라 구조의 재배열이다.</h2>
         </div>
         <div class="section__body">
           <p>
@@ -377,7 +454,7 @@
 
       <section class="section" id="price" data-section>
         <div class="section__head">
-          <p class="eyebrow">08 / 가격 반응</p>
+          <p class="eyebrow">09 / 가격 반응</p>
           <h2>가격 반응은 수급 가설의 마지막 확인 단계다.</h2>
         </div>
         <div class="section__body split">
@@ -414,7 +491,7 @@
 
       <section class="section" id="practice" data-section>
         <div class="section__head">
-          <p class="eyebrow">09 / 실전 적용</p>
+          <p class="eyebrow">10 / 실전 적용</p>
           <h2>수급 정보를 실행 가능한 가격 변동 가설로 정리한다.</h2>
         </div>
         <ol class="steps">
@@ -455,7 +532,7 @@
 
       <section class="section" id="limits" data-section>
         <div class="section__head">
-          <p class="eyebrow">10 / 한계와 실행 원칙</p>
+          <p class="eyebrow">11 / 한계와 실행 원칙</p>
           <h2>수급 분석은 참여자 구성이 제한적인 구간에서 가장 유용하다.</h2>
         </div>
         <div class="section__body split">

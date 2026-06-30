@@ -9,6 +9,12 @@
   --royal-soft: #edf3ff;
   --turquoise: #12bfc9;
   --turquoise-soft: #e9fbfc;
+  --green: #168a5b;
+  --green-soft: #eaf7f0;
+  --amber: #c98916;
+  --amber-soft: #fff6df;
+  --red: #d04444;
+  --red-soft: #fff0f0;
   --gray: #eef2f6;
   --shadow: 0 22px 60px rgba(8, 8, 8, 0.09);
   color-scheme: light;
@@ -441,6 +447,364 @@ h3 {
   line-height: 1.72;
 }
 
+.section--visual .section__head {
+  max-width: 980px;
+}
+
+.field-animation {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+  padding: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.field-animation__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.field-animation__controls button {
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--gray);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.field-animation__controls button:hover,
+.field-animation__controls button:focus-visible,
+.field-animation__controls button.is-active {
+  color: #fff;
+  background: var(--ink);
+  border-color: var(--ink);
+  outline: none;
+}
+
+.field-animation__stage {
+  min-height: 330px;
+  padding: 14px;
+  background: #f9fbfd;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.field-channel {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(31, 78, 216, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(8, 8, 8, 0.06) 1px, transparent 1px),
+    #fff;
+  background-size: 48px 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.flow-line {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  height: 18px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(18, 191, 201, 0.2) 0 20px,
+    rgba(18, 191, 201, 0.9) 20px 42px,
+    rgba(18, 191, 201, 0.2) 42px 66px
+  );
+  animation: flowPulse 2.8s linear infinite;
+  transition:
+    top 260ms ease,
+    right 260ms ease,
+    left 260ms ease,
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.flow-line--top {
+  top: 76px;
+}
+
+.flow-line--middle {
+  top: 138px;
+  animation-delay: -0.9s;
+}
+
+.flow-line--bottom {
+  top: 200px;
+  animation-delay: -1.8s;
+}
+
+.pressure,
+.market-node {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  min-width: 74px;
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  transition:
+    transform 260ms ease,
+    opacity 260ms ease,
+    background-color 260ms ease,
+    color 260ms ease,
+    border-color 260ms ease;
+}
+
+.pressure--buy {
+  left: 28px;
+  top: 24px;
+  color: #064d52;
+  background: var(--turquoise-soft);
+  border: 1px solid rgba(18, 191, 201, 0.55);
+}
+
+.pressure--supply {
+  right: 28px;
+  bottom: 24px;
+  color: #664408;
+  background: var(--amber-soft);
+  border: 1px solid rgba(201, 137, 22, 0.44);
+}
+
+.market-node {
+  color: var(--text);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(8, 8, 8, 0.08);
+}
+
+.market-node--a {
+  left: 26%;
+  top: 48px;
+}
+
+.market-node--b {
+  right: 24%;
+  top: 112px;
+}
+
+.market-node--c {
+  left: 36%;
+  bottom: 42px;
+}
+
+.price-path {
+  position: absolute;
+  left: 13%;
+  right: 13%;
+  bottom: 56px;
+  height: 4px;
+  background: var(--royal);
+  border-radius: 999px;
+  transform: rotate(-4deg);
+  transform-origin: left center;
+  transition:
+    bottom 260ms ease,
+    transform 260ms ease,
+    background-color 260ms ease,
+    opacity 260ms ease;
+}
+
+.price-path::after {
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: inherit;
+  border-radius: 50%;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.transition-break {
+  position: absolute;
+  inset: 36px 26%;
+  opacity: 0;
+  border-left: 4px solid var(--red);
+  border-right: 4px solid var(--red);
+  transform: skewX(-12deg) scaleY(0.72);
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.field-animation[data-stage="delta"] .pressure--buy {
+  color: #fff;
+  background: var(--turquoise);
+  transform: translateX(58px) scale(1.08);
+}
+
+.field-animation[data-stage="delta"] .flow-line {
+  right: 18px;
+  transform: scaleX(1.04);
+}
+
+.field-animation[data-stage="delta"] .price-path {
+  bottom: 74px;
+  transform: rotate(-1deg);
+}
+
+.field-animation[data-stage="sensitivity"] .pressure--buy {
+  color: #fff;
+  background: var(--green);
+  transform: translateX(92px) scale(1.12);
+}
+
+.field-animation[data-stage="sensitivity"] .pressure--supply {
+  opacity: 0.48;
+  transform: translateX(22px) scale(0.88);
+}
+
+.field-animation[data-stage="sensitivity"] .flow-line {
+  left: 76px;
+  right: 76px;
+  height: 14px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(22, 138, 91, 0.18) 0 14px,
+    rgba(22, 138, 91, 0.95) 14px 32px,
+    rgba(22, 138, 91, 0.18) 32px 50px
+  );
+  transform: scaleX(1.14);
+}
+
+.field-animation[data-stage="sensitivity"] .price-path {
+  bottom: 98px;
+  background: var(--green);
+  transform: rotate(-9deg);
+}
+
+.field-animation[data-stage="transition"] .pressure--buy {
+  transform: translateX(34px) translateY(18px) scale(0.94);
+}
+
+.field-animation[data-stage="transition"] .pressure--supply {
+  color: #fff;
+  background: var(--red);
+  transform: translateX(-90px) translateY(-38px) scale(1.16);
+}
+
+.field-animation[data-stage="transition"] .flow-line {
+  opacity: 0.68;
+  transform: translateY(18px) scaleX(0.78);
+  animation-name: flowPulse, fieldJitter;
+  animation-duration: 2.8s, 680ms;
+  animation-iteration-count: infinite, infinite;
+}
+
+.field-animation[data-stage="transition"] .flow-line--middle {
+  top: 122px;
+  transform: translateY(-18px) scaleX(0.92);
+}
+
+.field-animation[data-stage="transition"] .price-path {
+  bottom: 84px;
+  background: var(--red);
+  opacity: 0.9;
+  transform: rotate(7deg) scaleX(0.84);
+}
+
+.field-animation[data-stage="transition"] .transition-break {
+  opacity: 1;
+  transform: skewX(-12deg) scaleY(1);
+}
+
+.field-animation[data-stage="transition"] .market-node--c {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateX(54px) translateY(-32px);
+}
+
+.field-animation__copy {
+  display: grid;
+  gap: 10px;
+  padding: 4px;
+}
+
+.field-animation__label {
+  color: var(--royal);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.field-animation__copy h3 {
+  font-size: 23px;
+}
+
+.field-animation__copy p:not(.field-animation__label) {
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.structure-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.structure-grid article {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.structure-grid span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.structure-grid h3 {
+  color: var(--royal);
+}
+
+.structure-grid article + article h3 {
+  color: var(--red);
+}
+
+@keyframes flowPulse {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 132px 0;
+  }
+}
+
+@keyframes fieldJitter {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+}
+
 .scenario-list {
   display: grid;
   gap: 10px;
@@ -732,6 +1096,33 @@ h3 {
 
   .response-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .field-animation {
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    padding: 20px;
+  }
+
+  .field-animation__controls {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .field-animation__stage {
+    min-height: 390px;
+  }
+
+  .field-channel {
+    height: 360px;
+  }
+
+  .field-animation__copy {
+    align-content: center;
+    padding: 14px;
+  }
+
+  .structure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
